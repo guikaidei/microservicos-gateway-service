@@ -32,6 +32,10 @@ metadata:
   namespace: default
   labels:
     app: gateway
+  annotations: 
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/gateway/actuator/prometheus"
+    prometheus.io/port: "8080"
 spec:
   replicas: 1
   selector:
@@ -41,6 +45,10 @@ spec:
     metadata:
       labels:
         app: gateway
+      annotations: 
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/gateway/actuator/prometheus"
+        prometheus.io/port: "8080"
     spec:
       containers:
       - name: gateway
@@ -122,4 +130,3 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-
