@@ -32,12 +32,12 @@ spring:
         - id: order
           uri: http://order:8080
           predicates:
-              - Path=/order/**
+            - Path=/order/**
 
-        # - id: exchange
-        #   uri: http://exchange:80
-        #   predicates:
-        #     - Path=/exchange/**
+        - id: exchange
+          uri: http://exchange:80
+          predicates:
+            - Path=/exchange/**
 
 logging:
   level:
